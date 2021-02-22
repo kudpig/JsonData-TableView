@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         downloadJSON {
-            print("Success")
+            self.tableView.reloadData()
         }
         
         tableView.delegate = self
