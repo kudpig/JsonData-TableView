@@ -13,6 +13,7 @@
 		8F4347F925E3F28C003D5457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F4347F725E3F28C003D5457 /* Main.storyboard */; };
 		8F4347FB25E3F28E003D5457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F4347FA25E3F28E003D5457 /* Assets.xcassets */; };
 		8F4347FE25E3F28E003D5457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F4347FC25E3F28E003D5457 /* LaunchScreen.storyboard */; };
+		8F43480725E401FA003D5457 /* HeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F43480625E401FA003D5457 /* HeroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8F4347FA25E3F28E003D5457 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F4347FD25E3F28E003D5457 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F4347FF25E3F28E003D5457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F43480625E401FA003D5457 /* HeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8F4347FA25E3F28E003D5457 /* Assets.xcassets */,
 				8F4347FC25E3F28E003D5457 /* LaunchScreen.storyboard */,
 				8F4347FF25E3F28E003D5457 /* Info.plist */,
+				8F43480625E401FA003D5457 /* HeroViewController.swift */,
 			);
 			path = "JsonData-TableView";
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F43480725E401FA003D5457 /* HeroViewController.swift in Sources */,
 				8F4347F625E3F28C003D5457 /* ViewController.swift in Sources */,
 				8F4347F225E3F28C003D5457 /* AppDelegate.swift in Sources */,
 				8F4347F425E3F28C003D5457 /* SceneDelegate.swift in Sources */,
