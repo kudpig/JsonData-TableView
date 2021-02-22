@@ -7,13 +7,66 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var heroes = [HeroStats]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        downloadJSON {
+            self.tableView.reloadData()
+        }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
+    
 
-
+    func downloadJSON(completed: @escaping () -> ()) {
+        
+        let url = URL(string: "https://api.opendota.com/api/heroStats")
+        
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error == nil {
+                do {
+                    self.heroes = try JSONDecoder().decode([HeroStats].self, from: data!)
+                    
+                    DispatchQueue.main.async {
+                        completed()
+                    }
+                } catch  {
+                    print("JSON Error")
+                }
+            }
+        }.resume()
+        
+    }
+    
+    // tableView funcs
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return heroes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = heroes[indexPath.row].localized_name.capitalized
+        return cell
+    }
+    // tableviewが選択された際の動作設定
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetails", sender: self) //selfはViewController型
+    }
+    
+    // segueの実行を検知するメソッド for segue...動作するsegue、sender...次のVCに送信するオブジェクト
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // destination...行き先
+        if let destination = segue.destination as? HeroViewController {
+            destination.hero = heroes[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
+    
 }
 
