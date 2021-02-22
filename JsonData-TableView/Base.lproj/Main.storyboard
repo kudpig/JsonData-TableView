@@ -26,6 +26,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="qi9-Ej-xfu"/>
+                    <connections>
+                        <segue destination="CZE-oQ-Sjx" kind="show" identifier="showDetails" id="rWm-2K-kjm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,6 +57,7 @@
                         <viewLayoutGuide key="safeArea" id="okL-nz-3mi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rHP-73-lFD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxe-Xt-Yhq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
