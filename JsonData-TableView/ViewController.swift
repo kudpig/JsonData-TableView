@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,7 +19,11 @@ class ViewController: UIViewController {
         downloadJSON {
             print("Success")
         }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
+    
 
     func downloadJSON(completed: @escaping () -> ()) {
         
@@ -39,6 +43,15 @@ class ViewController: UIViewController {
             }
         }.resume()
         
+    }
+    
+    // tableView funcs
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
     
 }
