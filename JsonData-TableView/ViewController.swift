@@ -55,6 +55,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = heroes[indexPath.row].localized_name.capitalized
         return cell
     }
+    // tableviewが選択された際の動作設定
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetails", sender: self) //selfはViewController型
+    }
+    
+    // segueの実行を検知するメソッド for segue...動作するsegue、sender...次のVCに送信するオブジェクト
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // destination...行き先
+        if let destination = segue.destination as? HeroViewController {
+            destination.hero = heroes[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
     
 }
 
