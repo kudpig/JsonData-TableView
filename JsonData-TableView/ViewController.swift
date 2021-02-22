@@ -47,11 +47,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // tableView funcs
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return heroes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.textLabel?.text = heroes[indexPath.row].localized_name.capitalized
+        return cell
     }
     
 }
