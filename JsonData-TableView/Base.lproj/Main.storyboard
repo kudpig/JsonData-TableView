@@ -34,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Hero View Controller-->
         <scene sceneID="db4-D5-tPD">
             <objects>
-                <viewController id="CZE-oQ-Sjx" sceneMemberID="viewController">
+                <viewController id="CZE-oQ-Sjx" customClass="HeroViewController" customModule="JsonData_TableView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Ap-Y6-bRc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,6 +79,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="rHP-73-lFD"/>
+                    <connections>
+                        <outlet property="attackLabel" destination="FQQ-R3-Q5J" id="9oO-D5-FYY"/>
+                        <outlet property="attributeLabel" destination="HMt-Qo-IXQ" id="0lw-gA-0bJ"/>
+                        <outlet property="imageView" destination="14b-6V-tIx" id="2YA-0u-FCe"/>
+                        <outlet property="legsLabel" destination="Dl0-sa-hF7" id="FtQ-kF-iX6"/>
+                        <outlet property="nameLabel" destination="hT1-lI-cPF" id="GJY-yt-paD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cxe-Xt-Yhq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
