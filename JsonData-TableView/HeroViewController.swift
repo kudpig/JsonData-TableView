@@ -20,22 +20,19 @@ class HeroViewController: UIViewController {
     
     @IBOutlet weak var legsLabel: UILabel!
     
+    var hero: HeroStats?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        nameLabel.text = hero?.localized_name
+        attributeLabel.text = hero?.primary_attr
+        attackLabel.text = hero?.attack_type
+        legsLabel.text = "\(hero?.legs)"
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
