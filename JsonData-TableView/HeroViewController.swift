@@ -29,7 +29,7 @@ class HeroViewController: UIViewController {
         nameLabel.text = hero?.localized_name
         attributeLabel.text = hero?.primary_attr
         attackLabel.text = hero?.attack_type
-        legsLabel.text = "\(hero?.legs)"
+        legsLabel.text = "\(hero?.legs ?? 0)"
     }
     
 
